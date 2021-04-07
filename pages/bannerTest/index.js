@@ -11,13 +11,13 @@ const BannerTest = () => {
 
   useEffect(() => {
     // TODO: switch this to the visualisation URL when we have it.
-    // const contentId = window.location.search.split('?content=')[1]; // get id from Params
+    const contentId = window.location.search.split('?content=')[1]; // get id from Params
 
     // Amplience Dynamic content Url
-    // const url = `https://cdn.c1.amplience.net/cms/content/query?fullBodyObject=true&scope=tree&store=dfs&query=%7B%22sys.iri%22:%22http://content.cms.amplience.com/${contentId}%22%7D`;
+    const url = `https://cdn.c1.amplience.net/cms/content/query?fullBodyObject=true&scope=tree&store=dfs&query=%7B%22sys.iri%22:%22http://content.cms.amplience.com/${contentId}%22%7D`;
 
     // static local api data (used during building content)
-    const url = 'http://localhost:3000/api/bannerTest';
+    // const url = 'http://localhost:3000/api/bannerTest';
 
     fetch(url)
       .then((res) => res.json())
