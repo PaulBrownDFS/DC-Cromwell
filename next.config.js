@@ -1,4 +1,4 @@
 module.exports = {
-  basePath: '/DC-Cromwell/out',
-  assetPrefix: '/DC-Cromwell/out/',
+  basePath: '/DC-Cromwell',
+  assetPrefix: '/DC-Cromwell/',
 };
