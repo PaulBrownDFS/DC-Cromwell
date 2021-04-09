@@ -19,7 +19,7 @@ const BannerTest = () => {
     }
 
     // Amplience Dynamic content Url
-    const url = `https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/cms/content/query?fullBodyObject=true&scope=tree&store=dfs&query=%7B%22sys.iri%22:%22http://content.cms.amplience.com/${contentId}%22%7D`;
+    const url = `https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/cms/content/query?fullBodyObject=true&scope=tree&store=dfs&query=%7B%22sys.iri%22:%22https://content.cms.amplience.com/${contentId}%22%7D&cb=${Date.now()}`;
 
     // static local api data (used during building content)
     // const url = 'http://localhost:3000/api/bannerTest';
