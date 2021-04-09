@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Box, Hidden, Typography, Grid } from '@material-ui/core';
+import { Box, Typography, Container } from '@material-ui/core';
+import Banner from '../../src/components/Banner';
 
 import styles from './bannerTest.module.scss';
 
@@ -11,7 +12,11 @@ const BannerTest = () => {
 
   useEffect(() => {
     // TODO: switch this to the visualisation URL when we have it.
-    const contentId = window.location.search.split('?content=')[1]; // get id from Params
+    let contentId = window.location.search.split('?content=')[1]; // get id from Params (TODO: to be refinded at a later date)
+
+    if (!contentId) {
+      contentId = 'dae332d7-d196-4ea2-888d-eaa420c89dbb'; // Fallback content id if none supplied
+    }
 
     // Amplience Dynamic content Url
     const url = `https://cdn.c1.amplience.net/cms/content/query?fullBodyObject=true&scope=tree&store=dfs&query=%7B%22sys.iri%22:%22http://content.cms.amplience.com/${contentId}%22%7D`;
@@ -24,7 +29,6 @@ const BannerTest = () => {
       .then((data) => {
         setBannerTest(window.amp.inlineContent(data)[0]); // use the Amplience CMS JavaScript SDK to manipulate the JSON-LD into a content tree
         setLoading(false);
-        console.log(window.amp.inlineContent(data)[0]);
       });
   }, []);
   return (
@@ -40,37 +44,11 @@ const BannerTest = () => {
         </Box>
       ) : (
         <div>
-          <Grid
-            container
-            spacing={1}
-            className={styles.dc_testBanner}
-            direction="row"
-            justify="center"
-            alignItems="center"
-          >
-            <Grid item xs={12}>
-              <Box textAlign="center">
-                <Typography variant="h6" color="primary">
-                  {bannerTest._meta.name}
-                </Typography>
-                <Hidden only={['sm', 'md', 'lg', 'xl']}>
-                  Extra Small Screen (0 - 374px)
-                </Hidden>
-                <Hidden only={['xs', 'md', 'lg', 'xl']}>
-                  Small Screen (375px - 767px)
-                </Hidden>
-                <Hidden only={['xs', 'sm', 'lg', 'xl']}>
-                  Medium Screen (768px - 1399px)
-                </Hidden>
-                <Hidden only={['xs', 'sm', 'md', 'xl']}>
-                  Large Screen (1400px - 1919px)
-                </Hidden>
-                <Hidden only={['xs', 'sm', 'md', 'lg']}>
-                  Large Screen (1920px - upwards)
-                </Hidden>
-              </Box>
-            </Grid>
-          </Grid>
+          <Container fixed>
+            <Box id="fixedWidthWrapper">
+              <Banner bannerTest={bannerTest} />
+            </Box>
+          </Container>
         </div>
       )}
     </div>

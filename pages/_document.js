@@ -1,8 +1,7 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
-import { Box, Container } from '@material-ui/core';
-import theme from '../src/theme';
+import theme from '../styles/theme/index.ts';
 
 export default class MyDocument extends Document {
   render() {
@@ -15,15 +14,11 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <script src="/cms-sdk.js"></script>
+          <script src="cms-sdk.js"></script>
         </Head>
         <body>
-          <Container fixed>
-            <Box id="fixedWidthWrapper">
-              <Main />
-              <NextScript />
-            </Box>
-          </Container>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
