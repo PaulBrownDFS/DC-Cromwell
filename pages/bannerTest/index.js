@@ -19,7 +19,7 @@ const BannerTest = () => {
     }
 
     // Amplience Dynamic content Url
-    const url = `https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/cms/content/query?fullBodyObject=true&scope=tree&store=dfs&query=%7B%22sys.iri%22:%22https://content.cms.amplience.com/${contentId}%22%7D&cb=${Date.now()}`;
+    const url = `https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/content/id/${contentId}?depth=all&format=inlined`;
 
     // static local api data (used during building content)
     // const url = 'http://localhost:3000/api/bannerTest';
@@ -27,7 +27,7 @@ const BannerTest = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setBannerTest(window.amp.inlineContent(data)[0]); // use the Amplience CMS JavaScript SDK to manipulate the JSON-LD into a content tree
+        setBannerTest(data); // use the Amplience CMS JavaScript SDK to manipulate the JSON-LD into a content tree
         setLoading(false);
       });
   }, []);
@@ -46,7 +46,7 @@ const BannerTest = () => {
         <div>
           <Container fixed>
             <Box id="fixedWidthWrapper">
-              <Banner bannerTest={bannerTest} />
+              <Banner bannerTest={bannerTest.content} />
             </Box>
           </Container>
         </div>
