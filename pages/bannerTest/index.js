@@ -10,9 +10,21 @@ const BannerTest = () => {
   const [bannerTest, setBannerTest] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const getId = (param) => {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split('=');
+      if (decodeURIComponent(pair[0]) == param) {
+        return decodeURIComponent(pair[1]);
+      }
+    }
+    return false;
+  };
+
   useEffect(() => {
     // TODO: switch this to the visualisation URL when we have it.
-    let contentId = window.location.search.split('content=')[1]; // get id from Params (TODO: to be refinded at a later date)
+    let contentId = getId('content');
 
     if (!contentId) {
       contentId = 'dae332d7-d196-4ea2-888d-eaa420c89dbb'; // Fallback content id if none supplied
