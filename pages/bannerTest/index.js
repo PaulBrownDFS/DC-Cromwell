@@ -12,17 +12,15 @@ const BannerTest = () => {
 
   useEffect(() => {
     // TODO: switch this to the visualisation URL when we have it.
-    let ampId = window.location.search.split('content=')[1]; // get id from Params (TODO: to be refinded at a later date)
+    let contentId = window.location.search.split('content=')[1]; // get id from Params (TODO: to be refinded at a later date)
 
-    if (!ampId) {
-      ampId = 'dae332d7-d196-4ea2-888d-eaa420c89dbb'; // Fallback content id if none supplied
+    if (!contentId) {
+      contentId = 'dae332d7-d196-4ea2-888d-eaa420c89dbb'; // Fallback content id if none supplied
     }
 
     // Amplience Dynamic content Url
     const url =
-      'https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/content/id/' +
-      ampId +
-      '?depth=all&format=inlined';
+      'https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/content/id/dae332d7-d196-4ea2-888d-eaa420c89dbb?depth=all&format=inlined';
 
     // static local api data (used during building content)
     // const url = 'http://localhost:3000/api/bannerTest';
