@@ -2,7 +2,7 @@ import React from 'react';
 import dfsTheme from './';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { colour } from './config';
+import { colour } from './config.ts';
 
 export default {
   title: 'DFS/Theme/Colours',

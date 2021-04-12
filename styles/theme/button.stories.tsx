@@ -1,8 +1,15 @@
 import React from 'react';
-import { colour } from '@dfs/component-library/styles/theme/config';
-import { Button, IconButton, Grid, Paper, makeStyles, Typography } from '@material-ui/core';
+import { colour } from './config.ts';
+import {
+  Button,
+  IconButton,
+  Grid,
+  Paper,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import muiTheme from '@dfs/component-library/styles/theme/themeDecorator';
+import muiTheme from './themeDecorator.tsx';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,12 +44,24 @@ const ButtonStory = () => {
       <Grid item xs={12} sm={6} lg={4}>
         <Typography variant="h6">Primary Button Dark Background</Typography>
         <Paper className={classes.paper} variant="outlined">
-          <span style={{ padding: 10, background: colour.primary, display: 'inline-block' }}>
+          <span
+            style={{
+              padding: 10,
+              background: colour.primary,
+              display: 'inline-block',
+            }}
+          >
             <Button variant="outlined" color="primary">
               Button
             </Button>
           </span>
-          <span style={{ padding: 10, background: colour.primary, display: 'inline-block' }}>
+          <span
+            style={{
+              padding: 10,
+              background: colour.primary,
+              display: 'inline-block',
+            }}
+          >
             <Button variant="outlined" color="primary" disabled>
               Disabled
             </Button>
@@ -67,12 +86,24 @@ const ButtonStory = () => {
       <Grid item xs={12} sm={6} lg={4}>
         <Typography variant="h6">Secondary Button Dark Background</Typography>
         <Paper className={classes.paper} variant="outlined">
-          <span style={{ padding: 10, background: colour.primary, display: 'inline-block' }}>
+          <span
+            style={{
+              padding: 10,
+              background: colour.primary,
+              display: 'inline-block',
+            }}
+          >
             <Button variant="contained" color="secondary">
               Button
             </Button>
           </span>
-          <span style={{ padding: 10, background: colour.primary, display: 'inline-block' }}>
+          <span
+            style={{
+              padding: 10,
+              background: colour.primary,
+              display: 'inline-block',
+            }}
+          >
             <Button variant="contained" color="secondary" disabled>
               Disabled
             </Button>
