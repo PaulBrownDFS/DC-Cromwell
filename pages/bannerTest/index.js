@@ -20,7 +20,9 @@ const BannerTest = () => {
 
     // Amplience Dynamic content Url
     const url =
-      'https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/content/id/dae332d7-d196-4ea2-888d-eaa420c89dbb?depth=all&format=inlined';
+      'https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/content/id/' +
+      contentId +
+      '?depth=all&format=inlined';
 
     // static local api data (used during building content)
     // const url = 'http://localhost:3000/api/bannerTest';
