@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { select } from '@storybook/addon-knobs';
+// import { select } from '@storybook/addon-knobs';
 import dfsTheme from './index.ts';
 
 interface Props {

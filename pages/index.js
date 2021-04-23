@@ -11,7 +11,8 @@ export default function Index() {
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js Dynamic Content Tools v1.0
         </Typography>
-        <Link href="/bannerTest">Banner Test</Link>
+        <Link href="/bannerTest">Banner Test</Link>-
+        <Link href="/typog">Typography Demo</Link>
       </Box>
     </Container>
   );

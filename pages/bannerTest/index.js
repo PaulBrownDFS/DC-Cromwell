@@ -42,7 +42,7 @@ const BannerTest = () => {
         </Box>
       ) : (
         <div>
-          <Container fixed>
+          <Container fixed maxWidth="xl">
             <Box id="fixedWidthWrapper">
               <Banner content={bannerTest.content} />
             </Box>
