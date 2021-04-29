@@ -25,7 +25,7 @@ const BannerTest = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setBannerTest(data); // use the Amplience CMS JavaScript SDK to manipulate the JSON-LD into a content tree
+        setBannerTest(data);
         setLoading(false);
       });
   }, []);

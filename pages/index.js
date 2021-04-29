@@ -12,7 +12,8 @@ export default function Index() {
           Next.js Dynamic Content Tools v1.0
         </Typography>
         <Link href="/bannerTest">Banner Test</Link>-
-        <Link href="/typog">Typography Demo</Link>
+        <Link href="/typog">Typography Demo</Link> -
+        <Link href="/cardlist">Ex Brands Cardlist Demo</Link> -
       </Box>
     </Container>
   );
