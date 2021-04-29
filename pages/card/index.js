@@ -47,7 +47,7 @@ const SingleCard = () => {
           <Container fixed maxWidth="xl">
             <Box id="fixedWidthWrapper" padding="20px">
               <Grid container justify="center" justify="center" spacing={1}>
-                <Card card={card.content.cards[0]}></Card>
+                <Card card={card.content}></Card>
               </Grid>
             </Box>
           </Container>

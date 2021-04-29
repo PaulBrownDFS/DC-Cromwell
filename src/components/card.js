@@ -74,7 +74,7 @@ const Card = ({ card }) => {
             srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679`}
           />
           <img
-            class="cardImage"
+            className="cardImage"
             src={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679`}
             alt={card.cardImage.imageAltText}
           />
