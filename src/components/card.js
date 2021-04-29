@@ -32,6 +32,12 @@ const Card = ({ card }) => {
     <Grid item sm={12} md={6} className={classes.dc_card}>
       <Box position="relative">
         <picture>
+          {/* WEBP */}
+          <source
+            type="image/webp"
+            media="(min-width: 1921px)"
+            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679&fmt.jpeg.interlaced=true&fmt=webp`}
+          />
           <source
             type="image/webp"
             media="(max-width: 768px)"
@@ -47,32 +53,25 @@ const Card = ({ card }) => {
             media="(max-width: 1920px)"
             srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=596&fmt.jpeg.interlaced=true&fmt=webp`}
           />
-          <source
-            type="image/webp"
-            media="(min-width: 1921px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679&fmt.jpeg.interlaced=true&fmt=webp`}
-          />
 
+          {/* JPG */}
           <source
-            type="image/webp"
+            media="(min-width: 1921px)"
+            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679`}
+          />
+          <source
             media="(max-width: 768px)"
             srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=322`}
           />
           <source
-            type="image/webp"
             media="(max-width: 1400px)"
             srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=344`}
           />
           <source
-            type="image/webp"
             media="(max-width: 1920px)"
             srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=596`}
           />
-          <source
-            type="image/webp"
-            media="(min-width: 1921px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679`}
-          />
+
           <img
             className="cardImage"
             src={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679`}
