@@ -1,5 +1,6 @@
 div#fixedWidthWrapper {
   margin: auto;
+  min-width: 332px;
 }
 
 @media (min-width: 375px) {

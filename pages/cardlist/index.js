@@ -4,24 +4,27 @@ import Head from 'next/head';
 import Grid from '@material-ui/core/Grid';
 import Card from '../../src/components/card';
 import { Box, Typography, Container } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { getQueryParam } from '../../src/functions';
 
 const Cardlist = () => {
   const [cardlist, setCardlist] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
   useEffect(() => {
-    let contentId = getQueryParam('content');
+    // let contentId = getQueryParam('content');
 
-    if (!contentId) {
-      contentId = 'bd250a38-0f41-4080-bb25-5b72ba88ad18'; // Fallback content id if none supplied
-    }
+    // if (!contentId) {
+    //   contentId = 'bd250a38-0f41-4080-bb25-5b72ba88ad18'; // Fallback content id if none supplied
+    // }
 
     // Amplience Dynamic content Url DFSv2 URL
-    const url = `https://76c8qrrtiabd11ltobf89e71r.staging.bigcontent.io/content/id/${contentId}?depth=all&format=inlined`;
+    // const url = `https://76c8qrrtiabd11ltobf89e71r.staging.bigcontent.io/content/id/${contentId}?depth=all&format=inlined`;
 
     // static local api data (used during building content)
-    //const url = 'http://localhost:3000/api/cardlist';
+    const url = 'http://localhost:3000/api/cardlist';
 
     fetch(url)
       .then((res) => res.json())
@@ -44,9 +47,15 @@ const Cardlist = () => {
         </Box>
       ) : (
         <>
-          <Container fixed maxWidth="xl">
+          <Container fixed maxWidth="xl" disableGutters={true}>
             <Box id="fixedWidthWrapper" padding="20px 0">
-              <Grid container justify="center" spacing={1}>
+              <Grid
+                container
+                justify="center"
+                className={
+                  desktop ? 'MuiGrid-spacing-xs-3 ' : 'MuiGrid-spacing-xs-1'
+                }
+              >
                 {cardlist.content.cards.map((card, index) => (
                   <Card card={card} key={`card${index}`}></Card>
                 ))}

@@ -35,62 +35,67 @@ const Card = ({ card }) => {
           {/* WEBP */}
           <source
             type="image/webp"
-            media="(min-width: 1921px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679&fmt.jpeg.interlaced=true&fmt=webp`}
+            media="(min-width: 1920px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=671&fmt.jpeg.interlaced=true&fmt=webp`}
           />
           <source
             type="image/webp"
-            media="(max-width: 768px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=322&fmt.jpeg.interlaced=true&fmt=webp`}
+            media="(min-width: 1400px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=588&fmt.jpeg.interlaced=true&fmt=webp`}
           />
           <source
             type="image/webp"
-            media="(max-width: 1400px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=344&fmt.jpeg.interlaced=true&fmt=webp`}
+            media="(min-width: 768px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=356&fmt.jpeg.interlaced=true&fmt=webp`}
           />
           <source
             type="image/webp"
-            media="(max-width: 1920px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=596&fmt.jpeg.interlaced=true&fmt=webp`}
+            media="(max-width: 767px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=332&fmt.jpeg.interlaced=true&fmt=webp`}
           />
 
           {/* JPG */}
           <source
-            media="(min-width: 1921px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679`}
+            media="(min-width: 1920px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=671`}
           />
           <source
-            media="(max-width: 768px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=322`}
+            media="(min-width: 1400px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=588`}
           />
           <source
-            media="(max-width: 1400px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=344`}
+            media="(min-width: 768px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=356`}
           />
           <source
-            media="(max-width: 1920px)"
-            srcset={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=596`}
+            media="(max-width: 767px)"
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=332`}
           />
 
           <img
             className="cardImage"
-            src={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=679`}
+            src={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=671`}
             alt={card.cardImage.imageAltText}
           />
         </picture>
-        {card.roundel ? (
+        {card.roundel && ( // conditional rendering based on data returned in reuqest
           <img
             className={`cardRoundel rdl_${card.roundel.roundelPosition}`}
             src={`https://images.dfs.co.uk/i/dfs/${card.roundel.roundel.name}?w=60`}
           />
-        ) : (
-          <Box className="NoRoundel"></Box>
         )}
       </Box>
-      <h3>{card.cardHeading}</h3>
-      <Button variant="outlined" color="secondary">
-        {card.cardBtnText}
-      </Button>
+      {card.cardHeading ? (
+        <h3>{card.cardHeading}</h3>
+      ) : (
+        <Box m={2}>{/*spacer*/}</Box>
+      )}
+
+      {card.buttonType && (
+        <Button variant="outlined" color="secondary" href={card.cardBtnLink}>
+          {card.cardBtnText}
+        </Button>
+      )}
     </Grid>
   );
 };
