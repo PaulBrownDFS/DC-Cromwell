@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
   dc_testBanner: {
     height: '400px',
     width: '100%',
+    minWidth: '322px',
     background: grey[300],
     '& h6': {
       color: theme.palette.primary.main,
@@ -28,14 +29,11 @@ const Banner = ({ content }) => {
           <Typography variant="h6" color="primary">
             {content.headline}
           </Typography>
-          <Hidden only={['sm', 'md', 'lg', 'xl']}>
-            Extra Small Screen (0 - 374px)
-          </Hidden>
           <Hidden only={['xs', 'md', 'lg', 'xl']}>
-            Small Screen (375px - 767px) (Mobile 322px)
+            Small Screen (375px - 767px) (Mobile 332px)
           </Hidden>
           <Hidden only={['xs', 'sm', 'lg', 'xl']}>
-            Medium Screen (768px - 1399px) (Tablet 696px)
+            Medium Screen (768px - 1399px) (Tablet 720px)
           </Hidden>
           <Hidden only={['xs', 'sm', 'md', 'xl']}>
             Large Screen (1400px - 1919px) (Desktop 1200px)
