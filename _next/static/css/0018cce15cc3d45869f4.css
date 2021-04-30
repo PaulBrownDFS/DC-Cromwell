@@ -1,0 +1,1 @@
+div#fixedWidthWrapper{margin:auto}@media(min-width:375px){div#fixedWidthWrapper{max-width:332px!important}}@media(min-width:768px){div#fixedWidthWrapper{max-width:720px!important}}@media(min-width:1400px){div#fixedWidthWrapper{max-width:1200px!important}}@media(min-width:1920px){div#fixedWidthWrapper{max-width:1366px!important}}
