@@ -13,11 +13,11 @@ const BannerTest = () => {
     let contentId = getQueryParam('content');
 
     if (!contentId) {
-      contentId = 'dae332d7-d196-4ea2-888d-eaa420c89dbb'; // Fallback content id if none supplied
+      contentId = 'be531b98-e742-4e57-901c-125b88313dfa'; // Fallback content id if none supplied
     }
 
     // Amplience Dynamic content Url
-    const url = `https://w59a4sqnbu301ot4nys8p4qo9.staging.bigcontent.io/content/id/${contentId}?depth=all&format=inlined`;
+    const url = `https://76c8qrrtiabd11ltobf89e71r.staging.bigcontent.io/content/id/${contentId}?depth=all&format=inlined`;
 
     // static local api data (used during building content)
     // const url = 'http://localhost:3000/api/bannerTest';
@@ -42,7 +42,7 @@ const BannerTest = () => {
         </Box>
       ) : (
         <div>
-          <Container fixed maxWidth="xl">
+          <Container fixed maxWidth="xl" disableGutters={true}>
             <Box id="fixedWidthWrapper">
               <Banner content={bannerTest.content} />
             </Box>
