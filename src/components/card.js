@@ -36,52 +36,52 @@ const Card = ({ card }) => {
           <source
             type="image/webp"
             media="(min-width: 1920px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=671&fmt.jpeg.interlaced=true&fmt=webp`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=671&fmt.jpeg.interlaced=true&fmt=webp`}
           />
           <source
             type="image/webp"
             media="(min-width: 1400px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=588&fmt.jpeg.interlaced=true&fmt=webp`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=588&fmt.jpeg.interlaced=true&fmt=webp`}
           />
           <source
             type="image/webp"
             media="(min-width: 768px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=356&fmt.jpeg.interlaced=true&fmt=webp`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=356&fmt.jpeg.interlaced=true&fmt=webp`}
           />
           <source
             type="image/webp"
             media="(max-width: 767px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=332&fmt.jpeg.interlaced=true&fmt=webp`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=332&fmt.jpeg.interlaced=true&fmt=webp`}
           />
 
           {/* JPG */}
           <source
             media="(min-width: 1920px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=671`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=671`}
           />
           <source
             media="(min-width: 1400px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=588`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=588`}
           />
           <source
             media="(min-width: 768px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=356`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=356`}
           />
           <source
             media="(max-width: 767px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=332`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=332`}
           />
 
           <img
             className="cardImage"
-            src={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}?w=671`}
+            src={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}/${card.cardImage.seoText}?w=671`}
             alt={card.cardImage.imageAltText}
           />
         </picture>
         {card.roundel && ( // conditional rendering based on data returned in reuqest
           <img
             className={`cardRoundel rdl_${card.roundel.roundelPosition}`}
-            src={`https://images.dfs.co.uk/i/dfs/${card.roundel.roundel.name}?w=60`}
+            src={`https://dfs.a.bigcontent.io/v1/static/${card.roundel.roundel.name}`}
           />
         )}
       </Box>
@@ -92,7 +92,11 @@ const Card = ({ card }) => {
       )}
 
       {card.buttonType && (
-        <Button variant="outlined" color="secondary" href={card.cardBtnLink}>
+        <Button
+          variant={card.buttonType}
+          color={card.buttonColour}
+          href={card.cardBtnLink}
+        >
           {card.cardBtnText}
         </Button>
       )}

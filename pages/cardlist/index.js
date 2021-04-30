@@ -1,11 +1,14 @@
-/* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Grid from '@material-ui/core/Grid';
 import Card from '../../src/components/card';
-import { Box, Typography, Container } from '@material-ui/core';
+import {
+  Box,
+  Typography,
+  Container,
+  useMediaQuery,
+  Grid,
+} from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { getQueryParam } from '../../src/functions';
 
 const Cardlist = () => {
@@ -20,7 +23,7 @@ const Cardlist = () => {
       contentId = 'bd250a38-0f41-4080-bb25-5b72ba88ad18'; // Fallback content id if none supplied
     }
 
-    // Amplience Dynamic content Url DFSv2 URL
+    // Amplience Dynamic content DFSv2 Staging URL
     const url = `https://76c8qrrtiabd11ltobf89e71r.staging.bigcontent.io/content/id/${contentId}?depth=all&format=inlined`;
 
     // static local api data (used during building content)
