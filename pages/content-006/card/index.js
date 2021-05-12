@@ -44,8 +44,8 @@ const SingleCard = () => {
         </Box>
       ) : (
         <>
-          <Container fixed maxWidth="xl">
-            <Box id="fixedWidthWrapper" padding="20px">
+          <Container fixed maxWidth="xl" disableGutters={true}>
+            <Box id="fixedWidthWrapper" padding="20px 0">
               <Grid container justify="center" justify="center" spacing={1}>
                 <Card card={card.content}></Card>
               </Grid>
