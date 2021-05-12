@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Grid from '@material-ui/core/Grid';
-import Card from '../components/card';
+import Card from '../../../src/components/content-006/card';
 import { Box, Typography, Container } from '@material-ui/core';
 import { getQueryParam } from '../../../src/functions';
 
