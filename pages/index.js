@@ -13,7 +13,7 @@ export default function Index() {
         </Typography>
         <Link href="/bannerTest">Banner Test</Link>-
         <Link href="/typog">Typography Demo</Link> -
-        <Link href="/cardlist">Ex Brands Cardlist Demo</Link> -
+        <Link href="/content-006/cardlist">Ex Brands Cardlist Demo</Link> -
       </Box>
     </Container>
   );

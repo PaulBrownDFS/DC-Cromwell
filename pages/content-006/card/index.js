@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Grid from '@material-ui/core/Grid';
-import Card from '../../src/components/card';
+import Card from '../components/card';
 import { Box, Typography, Container } from '@material-ui/core';
-import { getQueryParam } from '../../src/functions';
+import { getQueryParam } from '../../../src/functions';
 
 const SingleCard = () => {
   const [card, setCard] = useState([]);
