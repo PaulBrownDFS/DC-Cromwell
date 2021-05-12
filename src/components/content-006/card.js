@@ -9,7 +9,7 @@ import {
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  dc_card: {
+  c006_card: {
     paddingBottom: '40px !important',
     '& img.cardRoundel': {
       position: 'absolute',
@@ -30,6 +30,21 @@ const useStyles = makeStyles((theme) => ({
       bottom: '15px',
       left: '15px',
     },
+    '& img.cardImage_c006': {
+      // fallback css image size for browsers that do not support <picture>
+      [theme.breakpoints.up('sm')]: {
+        width: '332px',
+      },
+      [theme.breakpoints.up('md')]: {
+        width: '356px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '588px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        width: '671px',
+      },
+    },
   },
 }));
 const Card = ({ card }) => {
@@ -39,7 +54,7 @@ const Card = ({ card }) => {
   const tt = card.cardImage.ttemplate ? `&\$${card.cardImage.ttemplate}\$` : '';
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <Grid item sm={12} md={6} className={classes.dc_card}>
+    <Grid item sm={12} md={6} className={classes.c006_card}>
       <Box position="relative">
         <picture>
           {/* WEBP */}
@@ -83,7 +98,7 @@ const Card = ({ card }) => {
           />
 
           <img
-            className="cardImage"
+            className="cardImage_c006"
             src={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=671${tt}`}
             alt={card.cardImage.imageAltText || 'DFS content card image'}
           />

@@ -21,7 +21,7 @@ const SingleCard = () => {
     const url = `https://76c8qrrtiabd11ltobf89e71r.staging.bigcontent.io/content/id/${contentId}?depth=all&format=inlined`;
 
     // static local api data (used during building content)
-    // const url = 'http://localhost:3000/api/cardlist';
+    // const url = 'http://localhost:3000/api/content-006/cardlist';
 
     fetch(url)
       .then((res) => res.json())
