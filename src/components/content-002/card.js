@@ -103,7 +103,7 @@ const Card = ({ card }) => {
           </Box>
 
           {card.cardHeading ? (
-            <h5>{card.cardHeading}</h5>
+            <h3>{card.cardHeading}</h3>
           ) : (
             <Box m={2}>{/*spacer*/}</Box>
           )}

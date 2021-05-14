@@ -26,9 +26,7 @@ const Banner = ({ content }) => {
     >
       <Grid item xs={12}>
         <Box textAlign="center">
-          <Typography variant="h6" color="primary">
-            {content.headline}
-          </Typography>
+          <h1>{content.headline}</h1>
           <Hidden only={['xs', 'md', 'lg', 'xl']}>
             Small Screen (375px - 767px) (Mobile 332px)
           </Hidden>
