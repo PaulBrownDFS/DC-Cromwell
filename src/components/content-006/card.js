@@ -52,6 +52,15 @@ const Card = ({ card }) => {
   const theme = useTheme();
   const seoText = card.cardImage.seoText ? `/${card.cardImage.seoText}` : '';
   const tt = card.cardImage.ttemplate ? `&\$${card.cardImage.ttemplate}\$` : '';
+  const mbDiparams = card.cardImage.mbDiParams
+    ? `&${card.cardImage.mbDiParams}`
+    : '';
+  const tbDiparams = card.cardImage.tbDiParams
+    ? `&${card.cardImage.tbDiParams}`
+    : '';
+  const dskDiparams = card.cardImage.dskDiParams
+    ? `&${card.cardImage.dskDiParams}`
+    : '';
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Grid item sm={12} md={6} className={classes.c006_card}>
@@ -66,17 +75,17 @@ const Card = ({ card }) => {
           <source
             type="image/webp"
             media="(min-width: 1400px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=588&fmt.jpeg.interlaced=true&fmt=webp${tt}`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=588&fmt.jpeg.interlaced=true&fmt=webp${tt}${dskDiparams}`}
           />
           <source
             type="image/webp"
             media="(min-width: 768px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=356&fmt.jpeg.interlaced=true&fmt=webp${tt}`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=356&fmt.jpeg.interlaced=true&fmt=webp${tt}${tbDiparams}`}
           />
           <source
             type="image/webp"
             media="(max-width: 767px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=332&fmt.jpeg.interlaced=true&fmt=webp${tt}`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=332&fmt.jpeg.interlaced=true&fmt=webp${tt}${mbDiparams}`}
           />
 
           {/* JPG */}
@@ -86,15 +95,15 @@ const Card = ({ card }) => {
           />
           <source
             media="(min-width: 1400px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=588${tt}`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=588${tt}${dskDiparams}`}
           />
           <source
             media="(min-width: 768px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=356${tt}`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=356${tt}${tbDiparams}`}
           />
           <source
             media="(max-width: 767px)"
-            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=332${tt}`}
+            srcSet={`https://images.dfs.co.uk/i/dfs/${card.cardImage.image.name}${seoText}?w=332${tt}${mbDiparams}`}
           />
 
           <img

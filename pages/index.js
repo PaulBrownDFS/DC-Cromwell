@@ -18,7 +18,10 @@ export default function Index() {
           <Link href="/typog">Typography Demo</Link> -
         </Box>
         <Box>
-          <Link href="/content-006/cardlist">Ex Brands Cardlist Demo</Link> -
+          <Link href="/content-006/cardlist">Content-006 Cardlist Demo</Link> -
+        </Box>
+        <Box>
+          <Link href="/content-002/cardlist">Content-002 Cardlist Demo</Link> -
         </Box>
       </Box>
     </Container>

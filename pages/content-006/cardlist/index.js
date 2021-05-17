@@ -20,7 +20,7 @@ const Cardlist = () => {
     let contentId = getQueryParam('content');
 
     if (!contentId) {
-      contentId = 'bd250a38-0f41-4080-bb25-5b72ba88ad18'; // Fallback content id if none supplied
+      contentId = '049334ba-5e67-4bd9-88ff-9005c5ebcd9a'; // Fallback content id if none supplied
     }
 
     // Amplience Dynamic content DFSv2 Staging URL
